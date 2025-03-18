@@ -10,13 +10,16 @@ isPrime ST R0, isPrime_R0 ; Callee save
         AND R3, R3, #0 ; Clear
         AND R4, R4, #0 ; Clear
                         
-    
+        ADD R4, R4, x0001 ; Bit mask for checking if R0 is even
+        AND R4, R0, R4 ; And'ing bit mask
+        BRz NPrime ; If it is even, not a prime number (Purely optimization)
+        
         ADD R1, R0, #0; Test number
-        ADD R4, R1, #-1 ; If test number is 1, end
+        ADD R4, R1, #-1 ; If test number is 1, end (R4 is never used)
         BRz YPrime ; If so end
         
 LOOP    ADD R1, R1, #-1 ; Decrement test number
-        ADD R4, R1, #-1 ; If test number is 1, end
+        ADD R4, R1, #-1 ; If test number is 1, end (R4 is never used)
         BRz YPrime 
 
         ; Negate test number:
