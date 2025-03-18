@@ -11,6 +11,6 @@ POS     LEA R0, YESPRIME
         PUTS
         RET
         
-NOTPRIME .STRINGZ "The number is not prime"
-YESPRIME .STRINGZ "The number is prime"
+NOTPRIME .STRINGZ "\nThe number is not prime"
+YESPRIME .STRINGZ "\nThe number is prime"
         .END
