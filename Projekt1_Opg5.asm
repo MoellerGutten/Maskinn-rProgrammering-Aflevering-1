@@ -5,6 +5,8 @@
         
 LOOP    LD R5, goReadS
         JSRR R5
+        ADD R0, R0, #0
+        BRn SKIP
         
         LD R5, goIsPrime
         JSRR R5
@@ -12,7 +14,7 @@ LOOP    LD R5, goReadS
         LD R5, goResultS
         JSRR R5
         
-        LEA R0, nLine
+SKIP    LEA R0, nLine
         PUTS
         AND R0, R0, #0
         
