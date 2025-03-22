@@ -143,6 +143,15 @@ INVALID LEA R0, INV
         PUTS
         AND R0, R0, #0
         ADD R0, R0, #-1
+        
+        LD R1, ReadS_R1 ; Restore registerS
+        LD R2, ReadS_R2
+        LD R3, ReadS_R3
+        LD R4, ReadS_R4
+        LD R5, ReadS_R5
+        LD R6, ReadS_R6
+        LD R7, ReadS_R7
+        
         RET
 
 DONE    LD R1, ReadS_R1 ; Restore registerS
